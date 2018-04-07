@@ -2,5 +2,5 @@ FROM alpine
 RUN apk --no-cache --update add libstdc++
 
 EXPOSE 8005
-WORKDIR /ohol/OneLife/server
-CMD ["/ohol/OneLife/server/OneLifeServer"]
+WORKDIR /ohol/source/OneLife/server
+CMD ["/ohol/source/OneLife/server/OneLifeServer"]

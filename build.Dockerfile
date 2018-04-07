@@ -9,9 +9,8 @@ RUN apk --no-cache --update add \
   sdl-dev \
   xclip
 
-COPY pullAndBuildLatest /ohol/
-COPY pullAndBuildTestSystem.sh /ohol/
+COPY build_scripts /ohol/
 
-WORKDIR /ohol
+WORKDIR /ohol/source
 
-CMD /ohol/pullAndBuildLatest && /ohol/pullAndBuildTestSystem.sh
+CMD /ohol/fetch_latest_tagged.sh && /ohol/build_server.sh
