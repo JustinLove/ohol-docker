@@ -34,3 +34,5 @@ latestTaggedVersionB=`git for-each-ref --sort=-creatordate --format '%(refname:s
 git checkout -f -q OneLife_v$latestTaggedVersionB
 
 rm */cache.fcz
+
+echo "done"

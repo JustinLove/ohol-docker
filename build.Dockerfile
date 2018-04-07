@@ -13,4 +13,5 @@ COPY build_scripts /ohol/
 
 WORKDIR /ohol/source
 
-CMD /ohol/fetch_latest_tagged.sh && /ohol/build_server.sh
+RUN /ohol/fetch_latest_tagged.sh
+RUN /ohol/build_server.sh
