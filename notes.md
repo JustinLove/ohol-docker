@@ -40,9 +40,9 @@ docker run --rm -t --mount source=ohola1,target=/ohol/source -p 8005:8005 ohol-s
 docker run --rm -t -p 8005:8005 ohol-server
 
 docker volume create oholdata1
-docker build -t ohol-build -f build.Dockerfile .
-docker build -t ohol-server -f server.Dockerfile .
-docker run --rm -it --mount source=oholdata2,target=/ohol/db -p 8005:8005 ohol-server
+docker build -t ohol-build -f build.Dockerfile build_context
+docker build -t ohol-server -f server.Dockerfile server_context
+docker run --rm -it --mount source=oholdata5,target=/ohol/db -p 8005:8005 ohol-server
 
 ## Alpine update commands
 

@@ -37,7 +37,7 @@ fi
 
 if [ ! -e settings ]
 then
-  mkdir $1settings
+  mkdir settings
 fi
 
 cp $1settings/* ./settings/

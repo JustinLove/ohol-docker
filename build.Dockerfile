@@ -9,7 +9,7 @@ RUN apk --no-cache --update add \
   sdl-dev \
   xclip
 
-COPY build_scripts /ohol/
+COPY . /ohol/
 
 WORKDIR /ohol/source
 

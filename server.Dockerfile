@@ -1,7 +1,7 @@
 FROM alpine
 RUN apk --no-cache --update add libstdc++
 
-COPY server_scripts /ohol/
+COPY . /ohol/
 
 WORKDIR /ohol/source/OneLife/server
 
