@@ -1,39 +1,46 @@
 #!/bin/sh
 
-if [ ! -e firstNames.txt ]
+if [ ! firstNames.txt ]
 then
-  ln -s $1firstNames.txt .
+  rm firstNames.txt
 fi
+ln -s $1firstNames.txt .
 
-if [ ! -e lastNames.txt ]
+if [ ! lastNames.txt ]
 then
-  ln -s $1lastNames.txt  
+  rm lastNames.txt
 fi
+ln -s $1lastNames.txt  
 
-if [ ! -e serverCodeVersionNumber.txt ]
+if [ ! serverCodeVersionNumber.txt ]
 then
-  ln -s $1serverCodeVersionNumber.txt .
+  rm serverCodeVersionNumber.txt
 fi
+ln -s $1serverCodeVersionNumber.txt .
 
-if [ ! -e dataVersionNumber.txt ]
+if [ ! dataVersionNumber.txt ]
 then
-  ln -s $1dataVersionNumber.txt .
+  rm dataVersionNumber.txt
 fi
+ln -s $1dataVersionNumber.txt .
 
-if [ ! -e categories ]
+if [ ! categories ]
 then
-  ln -s $1categories .
+  rm categories
 fi
+ln -s $1categories .
 
-if [ ! -e objects ]
+if [ ! objects ]
 then
-  ln -s $1objects .
+  rm objects
 fi
+ln -s $1objects .
 
-if [ ! -e transitions ]
+if [ ! transitions ]
 then
-  ln -s $1transitions .
+  rm transitions
 fi
+ln -s $1transitions .
 
 if [ ! -e settings ]
 then

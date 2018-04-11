@@ -1,4 +1,4 @@
 #!/bin/sh
 
-/ohol/link_static.sh /ohol/source/OneLife/server/
-/ohol/source/OneLife/server/OneLifeServer
+/ohol/link_static.sh /ohol/server/
+/ohol/server/OneLifeServer

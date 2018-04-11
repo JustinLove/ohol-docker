@@ -3,7 +3,7 @@ RUN apk --no-cache --update add libstdc++
 
 COPY . /ohol/
 
-WORKDIR /ohol/source/OneLife/server
+WORKDIR /ohol/server
 
 COPY --from=ohol-build /ohol/source/OneLifeData7/dataVersionNumber.txt .
 COPY --from=ohol-build /ohol/source/OneLifeData7/categories categories
