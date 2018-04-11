@@ -10,11 +10,3 @@ ln -s ../../OneLifeData7/transitions .
 ln -s ../../OneLifeData7/dataVersionNumber.txt .
 
 git for-each-ref --sort=-creatordate --format '%(refname:short)' --count=1 refs/tags | sed -e 's/OneLife_v//' > serverCodeVersionNumber.txt
-
-echo 0 > settings/requireTicketServerCheck.ini
-echo 0 > settings/useStatsServer.ini
-echo 0 > settings/allowBugReports.ini
-echo 0 > settings/apocalypsePossible.ini
-echo 0 > settings/mapCellForgottenSeconds.ini
-> settings/reflectorURL.ini
-echo 1 > settings/forceEveLocation.ini
