@@ -1,9 +1,9 @@
 FROM alpine
 RUN apk --no-cache --update add libstdc++
 
-WORKDIR /ohol/source/OneLife/server
-
 COPY server_scripts /ohol/
+
+WORKDIR /ohol/source/OneLife/server
 
 COPY --from=ohol-build /ohol/source/OneLife/server/firstNames.txt .
 COPY --from=ohol-build /ohol/source/OneLife/server/lastNames.txt .
@@ -15,7 +15,7 @@ COPY --from=ohol-build /ohol/source/OneLifeData7/categories categories
 COPY --from=ohol-build /ohol/source/OneLifeData7/objects objects
 COPY --from=ohol-build /ohol/source/OneLifeData7/transitions transitions
 
-RUN /ohol/link_data.sh ../../../db/
+WORKDIR /ohol/db
 
 EXPOSE 8005
-CMD ["/ohol/source/OneLife/server/OneLifeServer"]
+CMD ["/ohol/run.sh"]
