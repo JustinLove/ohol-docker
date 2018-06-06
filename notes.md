@@ -1,7 +1,17 @@
 ## Notes
 
- - break down build scripts
- - setting updates
+- break down build scripts
+- setting updates
+
+## Usage
+
+```
+./local_fetch.sh
+./build.sh
+./server.sh
+docker volume create oholdata1 # optional, must match run.sh
+./run.sh
+```
 
 ## Storage layers
 

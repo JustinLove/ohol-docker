@@ -17,21 +17,21 @@ fi
 
 
 cd minorGems
-git fetch
-latestTaggedVersion=`git for-each-ref --sort=-creatordate --format '%(refname:short)' --count=1 refs/tags | sed -e 's/OneLife_v//'`
+git fetch --tags
+latestTaggedVersion=`git for-each-ref --sort=-creatordate --format '%(refname:short)' --count=1 refs/tags/OneLife_v* | sed -e 's/OneLife_v//'`
 git checkout -f -q OneLife_v$latestTaggedVersion
 
 
 cd ../OneLife
-git fetch
-latestTaggedVersionA=`git for-each-ref --sort=-creatordate --format '%(refname:short)' --count=1 refs/tags | sed -e 's/OneLife_v//'`
+git fetch --tags
+latestTaggedVersionA=`git for-each-ref --sort=-creatordate --format '%(refname:short)' --count=1 refs/tags/OneLife_v* | sed -e 's/OneLife_v//'`
 git checkout -f -q OneLife_v$latestTaggedVersionA
 
-git for-each-ref --sort=-creatordate --format '%(refname:short)' --count=1 refs/tags | sed -e 's/OneLife_v//' > server/serverCodeVersionNumber.txt
+git for-each-ref --sort=-creatordate --format '%(refname:short)' --count=1 refs/tags/OneLife_v* | sed -e 's/OneLife_v//' > server/serverCodeVersionNumber.txt
 
 cd ../OneLifeData7
-git fetch
-latestTaggedVersionB=`git for-each-ref --sort=-creatordate --format '%(refname:short)' --count=1 refs/tags | sed -e 's/OneLife_v//'`
+git fetch --tags
+latestTaggedVersionB=`git for-each-ref --sort=-creatordate --format '%(refname:short)' --count=1 refs/tags/OneLife_v* | sed -e 's/OneLife_v//'`
 git checkout -f -q OneLife_v$latestTaggedVersionB
 
 rm */cache.fcz
