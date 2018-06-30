@@ -7,3 +7,5 @@ echo 0 > settings/apocalypsePossible.ini
 echo 0 > settings/mapCellForgottenSeconds.ini
 > settings/reflectorURL.ini
 echo 1 > settings/forceEveLocation.ini
+echo 20.0 > settings/minFoodDecrementSeconds.ini
+echo 200.0 > settings/maxFoodDecrementSeconds.ini
