@@ -5,6 +5,7 @@ echo 0 > settings/useLineageServer.ini
 echo 0 > settings/allowBugReports.ini
 echo 0 > settings/apocalypsePossible.ini
 echo 0 > settings/mapCellForgottenSeconds.ini
+echo 1 > settings/flushLookTimes.ini
 > settings/reflectorURL.ini
 echo 1 > settings/forceEveLocation.ini
 echo 20.0 > settings/minFoodDecrementSeconds.ini
