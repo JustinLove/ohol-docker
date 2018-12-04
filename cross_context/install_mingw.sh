@@ -22,6 +22,3 @@ rm -rf ./libpng
 rm SDL-devel-1.2.15-mingw32.tar.gz
 rm libpng-1.6.12-w32-bin.zip
 rm zlib-1.2.8-2-w32-bin.zip
-
-#cd /ohol/
-#cp cross/* minorGems/game/platforms/SDL/

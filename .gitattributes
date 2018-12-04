@@ -1,3 +1,4 @@
 * text=auto
 
 *.sh eol=lf
+cross_context/cross/* eol=lf

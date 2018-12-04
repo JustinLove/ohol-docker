@@ -1,2 +1,2 @@
 #!/bin/sh
-docker build -t ohol-cross:latest -f cross.Dockerfile cross_context
+docker run -it --mount type=bind,source="$(pwd)"/source,target=/ohol/source ohol-cross /bin/bash
