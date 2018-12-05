@@ -1,11 +1,9 @@
 ## Notes
 
-Cross-Compiler runs, but errors on a windows socket file
-- apply Winsock patch?
 - stgit in general
-- get working
-- cp cross/* source/minorGems/game/platforms/SDL/
-- work out windows issues
+  - been running in host so far
+  - will not run without setting git user
+- work out using container on windows
 
 - break down build scripts
 - setting updates
