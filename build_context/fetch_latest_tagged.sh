@@ -20,6 +20,7 @@ cd minorGems
 git fetch --tags
 latestTaggedVersion=`git for-each-ref --sort=-creatordate --format '%(refname:short)' --count=1 refs/tags/OneLife_v* | sed -e 's/OneLife_v//'`
 git checkout -f -q OneLife_v$latestTaggedVersion
+find network \( -name "*.cpp" -or -name "*.h" \) -exec sed -i -e 's/Winsock/winsock/g' {} +
 
 
 cd ../OneLife
