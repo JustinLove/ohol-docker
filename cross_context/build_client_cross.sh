@@ -7,3 +7,6 @@ cd OneLife
 cd gameSource
 
 make
+
+mv OneLife OneLife.exe
+7z a ../../OneLife-`cat ../server/serverCodeVersionNumber.txt`.zip OneLife.exe

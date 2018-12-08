@@ -31,6 +31,8 @@ docker build -t ohol-build -f build.Dockerfile build_context
 docker build -t ohol-server -f server.Dockerfile server_context
 docker run --rm -it --mount source=oholdata5,target=/ohol/db -p 8005:8005 ohol-server
 
+s3cmd --configure s3://wondible-com-wonlife --config=./.s3cfg
+
 ## Alpine update commands
 
 apk update

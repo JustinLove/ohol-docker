@@ -25,15 +25,20 @@ RUN apt-get install -y \
   wget \
   stgit
 
+RUN apt-get install -y \
+  s3cmd
+
+COPY install_mingw.sh /ohol/
+RUN /ohol/install_mingw.sh
 
 COPY . /ohol/
 
-RUN /ohol/install_mingw.sh
-
-RUN mkdir -p ~/.config/git
-RUN cp /ohol/gitattributes ~/.config/git/attributes
+RUN mkdir -p ~/.config/git && \
+  cp /ohol/gitattributes ~/.config/git/attributes
 
 WORKDIR /ohol/source
 
 RUN /ohol/fetch_latest_tagged.sh
 RUN /ohol/build_client_cross.sh
+
+CMD ["/ohol/upload_client.sh"]
