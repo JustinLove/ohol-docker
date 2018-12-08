@@ -8,5 +8,5 @@ cd gameSource
 
 make
 
-mv OneLife OneLife.exe
-7z a ../../OneLife-`cat ../server/serverCodeVersionNumber.txt`.zip OneLife.exe
+mv OneLife WonLife.exe
+7z a ../../WonLife-`cat ../server/serverCodeVersionNumber.txt`.zip WonLife.exe

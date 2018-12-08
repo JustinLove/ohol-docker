@@ -34,4 +34,15 @@ git checkout server/runServer.bat
 
 rm */cache.fcz
 
+if [ ! -e patches-master ]
+then
+	git clone https://github.com/JustinLove/onelife-client-patches.git patches-master
+fi
+
+cd patches-master
+git fetch
+git checkout -f -q master
+
+cd ..
+
 echo "done"
