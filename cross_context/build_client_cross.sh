@@ -9,4 +9,5 @@ cd gameSource
 make
 
 mv OneLife WonLife.exe
-7z a ../../WonLife-`cat ../server/serverCodeVersionNumber.txt`.zip WonLife.exe
+gameClientVersion=$(grep versionNumber game.cpp | head -1 | sed -e 's/[^0-9]*//g' );
+7z a ../../WonLife-${gameClientVersion}.zip WonLife.exe
