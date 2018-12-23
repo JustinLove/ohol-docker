@@ -1,4 +1,4 @@
 #!/bin/sh
 
-cd source
-../cross_context/fetch_latest_tagged.sh
+cd cross_context/source
+../fetch_latest_tagged.sh
