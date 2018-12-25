@@ -5,11 +5,11 @@
 ### Usage
 
 ```
-./local_fetch.sh
-./build.sh
-./server.sh
-docker volume create oholdata1 # optional, must match run.sh
-./run.sh
+./build_server_fetch.sh
+./build_server.sh
+./package_server.sh
+docker volume create oholdata1 # optional, must match package_server_run.sh
+./package_server_run.sh
 ```
 
 #### Windows (Docker Toolbox)
@@ -41,14 +41,14 @@ Will need to edit the docker VirtualBox to forward port 8005.
 - server
 - settings?
 
-## Client Cross Compile
+## Windows Client Cross Compile
 
 ### Usage
 
 ```
-./cross_fetch.sh
-./compile.sh
+./windows_client_fetch.sh
+./windows_client_build.sh
 # copy config/example.s3cfg to config/.s3cfg and fill in access and secret keys
 # currently uploads to fixed s3 bucket
-./upload.sh
+./windows_client_upload.sh
 ```
