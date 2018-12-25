@@ -1,4 +1,4 @@
 #!/bin/sh
 
-cd cross_context/source
+cd windows_client/source
 ../fetch_latest_tagged.sh

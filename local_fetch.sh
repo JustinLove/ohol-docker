@@ -1,4 +1,4 @@
 #!/bin/sh
 
-cd build_context/source
+cd build_server/source
 ../fetch_latest_tagged.sh

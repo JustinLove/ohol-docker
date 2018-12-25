@@ -1,5 +1,5 @@
-build_context/source/*
-cross_context/source/*
+build_server/source/*
+windows_client/source/*
 source/*
 .env
 config/.s3cfg
