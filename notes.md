@@ -1,12 +1,19 @@
 ## Notes
 
-- stgit in general
-  - been running in host so far
-  - will not run without setting git user
 - work out using container on windows
 
 - break down build scripts
 - setting updates
+
+- how to be notified of changes in other repositories - lambda scheduled task?
+- Where can we run actual builds?
+  - CircleCI - compile image with build commands in yaml
+  - TravicsCI - support running docker commands, hopefully scripts running docker commands
+  - Docker Hub for image builds - no run?
+  - ECS - lots of settings and options
+    - fargate is more containe oriented?
+    - can supposedly set terminate on done
+    - storage?
 
 
 ## Docker commands
