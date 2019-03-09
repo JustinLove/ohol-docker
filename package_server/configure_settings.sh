@@ -13,5 +13,6 @@ echo 0 > settings/mapCellForgottenSeconds.ini
 echo 1 > settings/skipLookTimeCleanup.ini
 echo 1 > settings/flushLookTimes.ini
 echo 1 > settings/forceEveLocation.ini
+echo "a@b.c" > settings/vogAllowAccounts.ini
 echo 20.0 > settings/minFoodDecrementSeconds.ini
 echo 200.0 > settings/maxFoodDecrementSeconds.ini
