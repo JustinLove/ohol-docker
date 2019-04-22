@@ -1,6 +1,9 @@
 #!/bin/sh
 
+set -eu
+
 cd OneLife/server
+patch <../../../fix-lineardb-read-write-ordering.patch
 ./configure 1
 make
 
