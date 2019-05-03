@@ -15,8 +15,6 @@ COPY --from=ohol-build /ohol/source/OneLife/server/serverCodeVersionNumber.txt .
 COPY --from=ohol-build /ohol/source/OneLife/server/OneLifeServer .
 COPY --from=ohol-build /ohol/source/OneLife/server/settings settings
 
-RUN /ohol/configure_settings.sh
-
 WORKDIR /ohol/db
 
 EXPOSE 8005
