@@ -16,4 +16,4 @@ cp ../server/lastNames.txt ./
 cp ../server/namesInfo.txt ./
 gameClientVersion=$(grep versionNumber game.cpp | head -1 | sed -e 's/[^0-9]*//g' );
 patchVersion=$(cat ../patches-master/patchVersionNumber.txt);
-7z a ../../WonLife-${gameClientVersion}.${patchVersion}.zip @../../../package_files.txt
+7z a ../../WonLife-${gameClientVersion}.${patchVersion}.zip @../patches-master/package_files.txt
