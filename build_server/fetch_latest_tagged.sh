@@ -1,5 +1,7 @@
 #!/bin/sh
 
+set -e
+
 if [ ! -e minorGems ]
 then
 	git clone https://github.com/jasonrohrer/minorGems.git	
@@ -15,26 +17,42 @@ then
 	git clone https://github.com/jasonrohrer/OneLifeData7.git	
 fi
 
-
 cd minorGems
 git fetch --tags
-latestTaggedVersion=`git for-each-ref --sort=-creatordate --format '%(refname:short)' --count=1 refs/tags/OneLife_v* | sed -e 's/OneLife_v//'`
-git checkout -f -q OneLife_v$latestTaggedVersion
-find network \( -name "*.cpp" -or -name "*.h" \) -exec sed -i "" -e 's/Winsock/winsock/g' {} +
+if [ -z $SERVER_VERSION ]
+then
+  minorGemsVersion=`git for-each-ref --sort=-creatordate --format '%(refname:short)' --count=1 refs/tags/OneLife_v* | sed -e 's/OneLife_v//'`
+else
+  minorGemsVersion=$SERVER_VERSION
+fi
+echo "minor gems $minorGemsVersion"
+git checkout -f -q OneLife_v$minorGemsVersion
+find network \( -name "*.cpp" -or -name "*.h" \) -exec sed -i"" -e 's/Winsock/winsock/g' {} +
 
 
 cd ../OneLife
 git fetch --tags
-latestTaggedVersionA=`git for-each-ref --sort=-creatordate --format '%(refname:short)' --count=1 refs/tags/OneLife_v* | sed -e 's/OneLife_v//'`
-git checkout -f -q OneLife_v$latestTaggedVersionA
+if [ -z $SERVER_VERSION ]
+then
+  SERVER_VERSION=`git for-each-ref --sort=-creatordate --format '%(refname:short)' --count=1 refs/tags/OneLife_v* | sed -e 's/OneLife_v//'`
+fi
+echo "server $SERVER_VERSION"
+git checkout -f -q OneLife_v$SERVER_VERSION
 
-git for-each-ref --sort=-creatordate --format '%(refname:short)' --count=1 refs/tags/OneLife_v* | sed -e 's/OneLife_v//' > server/serverCodeVersionNumber.txt
+echo $SERVER_VERSION > server/serverCodeVersionNumber.txt
 
 cd ../OneLifeData7
 git fetch --tags
-latestTaggedVersionB=`git for-each-ref --sort=-creatordate --format '%(refname:short)' --count=1 refs/tags/OneLife_v* | sed -e 's/OneLife_v//'`
-git checkout -f -q OneLife_v$latestTaggedVersionB
+if [ -z $DATA_VERSION ]
+then
+  DATA_VERSION=`git for-each-ref --sort=-creatordate --format '%(refname:short)' --count=1 refs/tags/OneLife_v* | sed -e 's/OneLife_v//'`
+fi
+echo "data $DATA_VERSION"
+git checkout -f -q OneLife_v$DATA_VERSION
 
-rm */cache.fcz
+if [ -e */cache.fcz ]
+then
+  rm */cache.fcz
+fi
 
 echo "done"

@@ -13,5 +13,8 @@ COPY . /ohol/
 
 WORKDIR /ohol/source
 
+ARG SERVER_VERSION
+ARG DATA_VERSION
+
 RUN /ohol/fetch_latest_tagged.sh
 RUN /ohol/build_server.sh

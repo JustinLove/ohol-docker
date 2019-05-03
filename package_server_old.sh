@@ -4,5 +4,7 @@ export DATA_VERSION=`cat build_server/source/OneLifeData7/dataVersionNumber.txt`
 docker build \
   --build-arg SERVER_VERSION \
   --build-arg DATA_VERSION \
-  -t ohol-build:s${SERVER_VERSION}d${DATA_VERSION} \
-  -f build_server/Dockerfile build_server
+  -t ohol-server:s${SERVER_VERSION}d${DATA_VERSION} \
+  -t wondible/ohol-server:s${SERVER_VERSION}d${DATA_VERSION} \
+  -f package_server/Dockerfile \
+  package_server

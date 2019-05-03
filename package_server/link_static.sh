@@ -4,13 +4,21 @@ if [ -e firstNames.txt ]
 then
   rm firstNames.txt
 fi
-ln -s $1firstNames.txt .
+
+if [ -e $1firstNames.txt ]
+then
+  ln -s $1firstNames.txt .
+fi
 
 if [ -e lastNames.txt ]
 then
   rm lastNames.txt
 fi
-ln -s $1lastNames.txt  
+
+if [ -e $1lastNames.txt ]
+then
+  ln -s $1lastNames.txt .
+fi
 
 if [ -e serverCodeVersionNumber.txt ]
 then

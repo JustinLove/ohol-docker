@@ -1,10 +1,12 @@
 #!/bin/sh
-serverVersion=`cat build_server/source/OneLife/server/serverCodeVersionNumber.txt`
-dataVersion=`cat build_server/source/OneLifeData7/dataVersionNumber.txt`
+export SERVER_VERSION=`cat build_server/source/OneLife/server/serverCodeVersionNumber.txt`
+export DATA_VERSION=`cat build_server/source/OneLifeData7/dataVersionNumber.txt`
 docker build \
-  -t ohol-server:s${serverVersion}d${dataVersion} \
+  --build-arg SERVER_VERSION \
+  --build-arg DATA_VERSION \
+  -t ohol-server:s${SERVER_VERSION}d${DATA_VERSION} \
   -t ohol-server:latest \
-  -t wondible/ohol-server:s${serverVersion}d${dataVersion} \
+  -t wondible/ohol-server:s${SERVER_VERSION}d${DATA_VERSION} \
   -t wondible/ohol-server:latest \
   -f package_server/Dockerfile \
   package_server
