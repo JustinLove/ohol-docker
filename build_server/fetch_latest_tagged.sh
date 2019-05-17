@@ -17,6 +17,7 @@ then
 	git clone https://github.com/jasonrohrer/OneLifeData7.git	
 fi
 
+
 cd minorGems
 git fetch --tags
 if [ -z $SERVER_VERSION ]
@@ -25,8 +26,15 @@ then
 else
   minorGemsVersion=$SERVER_VERSION
 fi
-echo "minor gems $minorGemsVersion"
-git checkout -f -q OneLife_v$minorGemsVersion
+
+if [ -z $SERVER_CHECKOUT ]
+then
+  git checkout -f -q $SERVER_CHECKOUT
+else
+  git checkout -f -q OneLife_v$minorGemsVersion
+fi
+echo "minor gems $minorGemsVersion $SERVER_CHECKOUT"
+git checkout -f -q $SERVER_CHECKOUT
 find network \( -name "*.cpp" -or -name "*.h" \) -exec sed -i"" -e 's/Winsock/winsock/g' {} +
 
 
@@ -36,10 +44,20 @@ if [ -z $SERVER_VERSION ]
 then
   SERVER_VERSION=`git for-each-ref --sort=-creatordate --format '%(refname:short)' --count=1 refs/tags/OneLife_v* | sed -e 's/OneLife_v//'`
 fi
-echo "server $SERVER_VERSION"
-git checkout -f -q OneLife_v$SERVER_VERSION
+
+if [ -z $SERVER_CHECKOUT ]
+then
+  git checkout -f -q $SERVER_CHECKOUT
+  SERVER_TAG=$SERVER_VERSION-`git log -1 --pretty=format:%h`
+else
+  git checkout -f -q OneLife_v$SERVER_VERSION
+  SERVER_TAG=$SERVER_VERSION
+fi
+echo "server $SERVER_TAG"
 
 echo $SERVER_VERSION > server/serverCodeVersionNumber.txt
+echo $SERVER_CHECKOUT > server/serverCodeCheckout.txt
+echo $SERVER_TAG > server/serverCodeTag.txt
 
 cd ../OneLifeData7
 git fetch --tags
