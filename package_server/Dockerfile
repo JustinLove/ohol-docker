@@ -1,6 +1,6 @@
-ARG SERVER_VERSION
+ARG SERVER_TAG
 ARG DATA_VERSION
-FROM ohol-build:s${SERVER_VERSION}d${DATA_VERSION} as build
+FROM ohol-build:s${SERVER_TAG}d${DATA_VERSION} as build
 
 
 FROM alpine

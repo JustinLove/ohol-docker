@@ -29,9 +29,9 @@ fi
 
 if [ -z $SERVER_CHECKOUT ]
 then
-  git checkout -f -q $SERVER_CHECKOUT
-else
   git checkout -f -q OneLife_v$minorGemsVersion
+else
+  git checkout -f -q $SERVER_CHECKOUT
 fi
 echo "minor gems $minorGemsVersion $SERVER_CHECKOUT"
 git checkout -f -q $SERVER_CHECKOUT
@@ -47,11 +47,11 @@ fi
 
 if [ -z $SERVER_CHECKOUT ]
 then
-  git checkout -f -q $SERVER_CHECKOUT
-  SERVER_TAG=$SERVER_VERSION-`git log -1 --pretty=format:%h`
-else
   git checkout -f -q OneLife_v$SERVER_VERSION
   SERVER_TAG=$SERVER_VERSION
+else
+  git checkout -f -q $SERVER_CHECKOUT
+  SERVER_TAG=$SERVER_VERSION-`git log -1 --pretty=format:%h`
 fi
 echo "server $SERVER_TAG"
 
