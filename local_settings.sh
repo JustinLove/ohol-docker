@@ -11,7 +11,7 @@ echo 0 > settings/allowBugReports.ini
 echo 0 > settings/apocalypsePossible.ini
 echo 0 > settings/mapCellForgottenSeconds.ini
 echo 1 > settings/skipLookTimeCleanup.ini
-echo 1 > settings/flushLookTimes.ini
+#echo 1 > settings/flushLookTimes.ini // blocks dummy recall
 echo 1 > settings/forceEveLocation.ini
 echo 1 > settings/allowMapRequests.ini
 echo "a@b.c" > settings/vogAllowAccounts.ini
