@@ -4,8 +4,10 @@ set -e
 
 cd OneLife/server
 
-if [ -e lineardb3.cpp ]
+git merge-base --is-ancestor fb6fe0a HEAD || UNPATCHED=$? && true
+if [[ -e lineardb3.cpp ]] && [[ $UNPATCHED ]]
 then
+  echo "APPLYING PATCH"
   patch <../../../fix-lineardb-read-write-ordering.patch
 fi
 
