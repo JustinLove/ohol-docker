@@ -5,6 +5,8 @@ echo 0 > settings/useCurserServer.ini
 > settings/curseServerURL.ini
 #echo 0 > settings/requireTicketServerCheck.ini
 #> settings/ticketServerURL.ini
+echo 0 > settings/useLifeTokenServer.ini.ini
+> settings/lifeTokenServerURL.ini
 echo 0 > settings/useStatsServer.ini
 > settings/reflectorURL.ini
 echo 0 > settings/useLineageServer.ini
