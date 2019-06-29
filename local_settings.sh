@@ -11,6 +11,7 @@ echo 0 > settings/useLineageServer.ini
 > settings/lineageServerURL.ini
 echo 0 > settings/useLifeTokenServer.ini
 > settings/lifeTokenServerURL.ini
+echo 0 > settings/useFitnessServer.ini
 > settings/fitnessServerURL.ini
 echo 0 > settings/allowBugReports.ini
 echo 0 > settings/apocalypsePossible.ini
