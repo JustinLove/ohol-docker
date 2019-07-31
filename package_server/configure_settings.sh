@@ -15,3 +15,5 @@ echo 0 > settings/useLifeTokenServer.ini
 echo 0 > settings/useFitnessServer.ini
 > settings/fitnessServerURL.ini
 echo 0 > settings/allowBugReports.ini
+echo 0 > settings/useArcServer.ini
+> settings/arcServerURL.ini
