@@ -29,3 +29,5 @@ echo "a@b.c" > settings/vogAllowAccounts.ini
 echo "a@b.c" > settings/mapRequestAllowAccounts.ini
 echo 20.0 > settings/minFoodDecrementSeconds.ini
 echo 200.0 > settings/maxFoodDecrementSeconds.ini
+
+echo 723 > biomeRandSeed.txt
