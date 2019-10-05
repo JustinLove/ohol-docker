@@ -1,5 +1,6 @@
 build_server/source/*
 windows_client/source/*
+macosx_client/source/*
 source/*
 .env
 config/.s3cfg
