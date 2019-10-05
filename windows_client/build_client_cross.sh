@@ -12,6 +12,8 @@ mv OneLife WonLife.exe
 cp ../patches-master/README.md ./
 cp ../patches-master/CHANGELOG.md ./
 cp ../server/firstNames.txt ./
+cp ../server/maleNames.txt ./
+cp ../server/femaleNames.txt ./
 cp ../server/lastNames.txt ./
 cp ../server/namesInfo.txt ./
 gameClientVersion=$(grep versionNumber game.cpp | head -1 | sed -e 's/[^0-9]*//g' );
