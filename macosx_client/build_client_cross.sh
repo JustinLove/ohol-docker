@@ -7,18 +7,15 @@ cd OneLife
 cd gameSource
 
 export OSXCROSS_MP_INC=1
-export CUSTOM_MACOSX_LINK_FLAGS=-F/Library/Frameworks
+export CUSTOM_MACOSX_LINK_FLAGS=-F/opt/osxcross/target/macports/pkgs/opt/local/Library/Frameworks
 make
 
-#534  cd ../build
-#  536  ./makeDistributionMacOSX v266 `uname` /Library/Frameworks/SDL.framework
-#  554  mkdir mac/OneLife_v266/OneLife.app
-#  556  cp -R -v macOSX/OneLife.app mac/OneLife_v266/OneLife_v266.app
-#  559  cp -r /Library/Frameworks/SDL.framework mac/OneLife_v266/OneLife_v266.app/Contents/Frameworks/
-#  562  ./makeDistributionMacOSX v266 `uname` /Library/Frameworks/SDL.framework
+cp -R ../build/macOSX/OneLife.app WonLife.app
+cp OneLife WonLife.app/Contents/MacOS
+rm WonLife.app/Contents/MacOS/empty.txt
+rm WonLife.app/Contents/Frameworks/empty.txt
+cp -R /opt/osxcross/target/macports/pkgs/opt/local/Library/Frameworks/SDL.framework WonLife.app/Contents/Frameworks/
 
-
-#mv OneLife WonLife.exe
 cp ../patches-master/README.md ./
 cp ../patches-master/CHANGELOG.md ./
 cp ../server/firstNames.txt ./
@@ -28,4 +25,5 @@ cp ../server/lastNames.txt ./
 cp ../server/namesInfo.txt ./
 gameClientVersion=$(grep versionNumber game.cpp | head -1 | sed -e 's/[^0-9]*//g' );
 patchVersion=$(cat ../patches-master/patchVersionNumber.txt);
+sed -i '/WonLife.exe/cWonLife.app' ../patches-master/package_files.txt
 7z a ../../WonLifeMacOSX-${gameClientVersion}.${patchVersion}.zip @../patches-master/package_files.txt

@@ -39,6 +39,6 @@ WORKDIR /ohol/source
 
 RUN /ohol/fetch_latest_tagged.sh
 RUN /ohol/apply_patches.sh
-#RUN /ohol/build_client_cross.sh
+RUN /ohol/build_client_cross.sh
 
 CMD ["/ohol/upload_client.sh"]
