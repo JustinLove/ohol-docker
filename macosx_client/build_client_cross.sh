@@ -25,5 +25,6 @@ cp ../server/lastNames.txt ./
 cp ../server/namesInfo.txt ./
 gameClientVersion=$(grep versionNumber game.cpp | head -1 | sed -e 's/[^0-9]*//g' );
 patchVersion=$(cat ../patches-master/patchVersionNumber.txt);
-sed -i '/WonLife.exe/cWonLife.app' ../patches-master/package_files.txt
+mv WonLife.app WonLife_v${gameClientVersion}.${patchVersion}.app
+sed -i "/WonLife.exe/cWonLife_v${gameClientVersion}.${patchVersion}.app" ../patches-master/package_files.txt
 7z a ../../WonLifeMacOSX-${gameClientVersion}.${patchVersion}.zip @../patches-master/package_files.txt
