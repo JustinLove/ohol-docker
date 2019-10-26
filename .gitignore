@@ -4,3 +4,4 @@ macosx_client/source/*
 source/*
 .env
 config/.s3cfg
+config/curl_github_auth.txt
