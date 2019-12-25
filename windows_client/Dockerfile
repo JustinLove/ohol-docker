@@ -25,8 +25,10 @@ RUN apt-get install -y \
   wget \
   stgit
 
+# upload
 RUN apt-get install -y \
-  s3cmd
+  s3cmd \
+  curl
 
 COPY install_mingw.sh /ohol/
 RUN /ohol/install_mingw.sh
