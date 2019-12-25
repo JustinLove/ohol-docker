@@ -28,6 +28,10 @@ echo 1 > settings/allowMapRequests.ini
 echo "a@b.c" > settings/vogAllowAccounts.ini
 echo "a@b.c" > settings/mapRequestAllowAccounts.ini
 echo 20.0 > settings/minFoodDecrementSeconds.ini
-echo 200.0 > settings/maxFoodDecrementSeconds.ini
+echo 220.0 > settings/maxFoodDecrementSeconds.ini
+#echo 0 > settings/minActivePlayersForSpecialBiomes.ini
+echo 0 > settings/minActivePlayersForToolSlots.ini
+echo 8 > settings/baseToolSlotsPerPlayer.ini
+echo 13 > settings/maxToolSlotsPerPlayer.ini
 
-echo 723 > biomeRandSeed.txt
+echo "723 0" > biomeRandSeed.txt
