@@ -31,7 +31,12 @@ echo 20.0 > settings/minFoodDecrementSeconds.ini
 echo 220.0 > settings/maxFoodDecrementSeconds.ini
 #echo 0 > settings/minActivePlayersForSpecialBiomes.ini
 echo 0 > settings/minActivePlayersForToolSlots.ini
-echo 8 > settings/baseToolSlotsPerPlayer.ini
-echo 13 > settings/maxToolSlotsPerPlayer.ini
+echo 7 > settings/baseToolSlotsPerPlayer.ini
+echo 7 > settings/maxToolSlotsPerPlayer.ini
+#echo 20 > settings/secondsPerYear.ini
+#echo 1 > settings/forceAllPlayersEve.ini
+
+#"a@b.c" "0 0,5 41 JASON ROHRER 3201 3202 0 0 0 0"
+
 
 echo "723 0" > biomeRandSeed.txt

@@ -40,7 +40,7 @@ then
 fi
 
 cd patches-master
-git fetch
+git fetch --tags
 git for-each-ref --sort=-creatordate --format '%(refname:short)' --count=1 refs/tags/v* | sed -e 's/v//' > patchVersionNumber.txt
 latestTaggedPatch=`cat patchVersionNumber.txt`
 git checkout -f -q v$latestTaggedPatch
