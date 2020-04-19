@@ -10,6 +10,7 @@ cat <<EOF
   "tag_name": "test_${gameClientVersion}.${patchVersion}",
   "target_commitish": "${target_commitish}",
   "name": "v${gameClientVersion}.${patchVersion}",
-  "draft": true
+  "draft": false,
+  "prerelease": false
 }
 EOF
