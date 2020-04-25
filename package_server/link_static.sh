@@ -1,5 +1,25 @@
 #!/bin/sh
 
+if [ -e maleNames.txt ]
+then
+  rm maleNames.txt
+fi
+
+if [ -e $1maleNames.txt ]
+then
+  ln -s $1maleNames.txt .
+fi
+
+if [ -e femaleNames.txt ]
+then
+  rm femaleNames.txt
+fi
+
+if [ -e $1femaleNames.txt ]
+then
+  ln -s $1femaleNames.txt .
+fi
+
 if [ -e firstNames.txt ]
 then
   rm firstNames.txt
@@ -49,6 +69,12 @@ then
   rm transitions
 fi
 ln -s $1transitions .
+
+if [ -e tutorialMaps ]
+then
+  rm tutorialMaps
+fi
+ln -s $1tutorialMaps .
 
 if [ ! -e settings ]
 then
