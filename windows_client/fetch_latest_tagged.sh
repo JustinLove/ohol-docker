@@ -18,8 +18,10 @@ git checkout -f -q OneLife_v$latestTaggedVersion
 cp ../../cross/* game/platforms/SDL/
 if sed --version 2> /dev/null | grep GNU -q; then
   find network \( -name "*.cpp" -or -name "*.h" \) -exec sed -i -e 's/Winsock/winsock/g' {} +
+  sed -i -e 's/#include <winuser\.h>/#include <windef.h>\n&/g' ui/SetMouseWin32.cpp
 else
   find network \( -name "*.cpp" -or -name "*.h" \) -exec sed -i "" -e 's/Winsock/winsock/g' {} +
+  sed -i "" -e 's/#include <winuser\.h>/#include <windef.h>\n&/g' ui/SetMouseWin32.cpp
 fi
 
 cd ../OneLife
