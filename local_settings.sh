@@ -24,6 +24,7 @@ echo 1 > settings/skipLookTimeCleanup.ini
 echo 0 > settings/longTermNoLookCullEnabled.ini
 echo 0 > settings/barrierOn.ini
 echo 1 > settings/forceEveLocation.ini
+#echo 5 > settings/forceEveAge.ini
 echo 1 > settings/allowMapRequests.ini
 echo "a@b.c" > settings/vogAllowAccounts.ini
 echo "a@b.c" > settings/mapRequestAllowAccounts.ini

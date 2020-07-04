@@ -20,6 +20,9 @@ fi
 
 cd minorGems
 git fetch --tags
+git reset --hard
+git checkout master
+git merge origin/master
 if [ -z $SERVER_VERSION ]
 then
   minorGemsVersion=`git for-each-ref --sort=-creatordate --format '%(refname:short)' --count=1 refs/tags/OneLife_v* | sed -e 's/OneLife_v//'`
@@ -40,6 +43,9 @@ find network \( -name "*.cpp" -or -name "*.h" \) -exec sed -i"" -e 's/Winsock/wi
 
 cd ../OneLife
 git fetch --tags
+git reset --hard
+git checkout master
+git merge origin/master
 if [ -z $SERVER_VERSION ]
 then
   SERVER_VERSION=`git for-each-ref --sort=-creatordate --format '%(refname:short)' --count=1 refs/tags/OneLife_v* | sed -e 's/OneLife_v//'`
