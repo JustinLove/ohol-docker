@@ -19,7 +19,8 @@ fi
 
 
 cd minorGems
-git fetch --tags
+(git fetch --tags || true)  #fetch the branches
+git fetch origin "+refs/tags/*:refs/tags/*" #now overwrite the tags
 git reset --hard
 git checkout master
 git merge origin/master
@@ -42,7 +43,8 @@ find network \( -name "*.cpp" -or -name "*.h" \) -exec sed -i"" -e 's/Winsock/wi
 
 
 cd ../OneLife
-git fetch --tags
+(git fetch --tags || true)  #fetch the branches
+git fetch origin "+refs/tags/*:refs/tags/*" #now overwrite the tags
 git reset --hard
 git checkout master
 git merge origin/master
@@ -66,7 +68,8 @@ echo $SERVER_CHECKOUT > server/serverCodeCheckout.txt
 echo $SERVER_TAG > server/serverCodeTag.txt
 
 cd ../OneLifeData7
-git fetch --tags
+(git fetch --tags || true)  #fetch the branches
+git fetch origin "+refs/tags/*:refs/tags/*" #now overwrite the tags
 if [ -z $DATA_VERSION ]
 then
   DATA_VERSION=`git for-each-ref --sort=-creatordate --format '%(refname:short)' --count=1 refs/tags/OneLife_v* | sed -e 's/OneLife_v//'`

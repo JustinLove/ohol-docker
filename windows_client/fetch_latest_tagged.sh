@@ -12,7 +12,8 @@ fi
 
 
 cd minorGems
-git fetch --tags
+git fetch --tags #fetch the branches
+git fetch origin "+refs/tags/*:refs/tags/*" #now overwrite the tags
 latestTaggedVersion=`git for-each-ref --sort=-creatordate --format '%(refname:short)' --count=1 refs/tags/OneLife_v* | sed -e 's/OneLife_v//'`
 git checkout -f -q OneLife_v$latestTaggedVersion
 cp ../../cross/* game/platforms/SDL/
@@ -25,7 +26,8 @@ else
 fi
 
 cd ../OneLife
-git fetch --tags
+git fetch --tags #fetch the branches
+git fetch origin "+refs/tags/*:refs/tags/*" #now overwrite the tags
 latestTaggedVersionA=`git for-each-ref --sort=-creatordate --format '%(refname:short)' --count=1 refs/tags/OneLife_v* | sed -e 's/OneLife_v//'`
 git checkout -f -q OneLife_v$latestTaggedVersionA
 
@@ -42,7 +44,8 @@ then
 fi
 
 cd patches-master
-git fetch
+git fetch --tags #fetch the branches
+git fetch origin "+refs/tags/*:refs/tags/*" #now overwrite the tags
 git for-each-ref --sort=-creatordate --format '%(refname:short)' --count=1 refs/tags/v* | sed -e 's/v//' > patchVersionNumber.txt
 latestTaggedPatch=`cat patchVersionNumber.txt`
 git checkout -f -q v$latestTaggedPatch
