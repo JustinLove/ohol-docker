@@ -46,7 +46,7 @@ fi
 cd patches-master
 git fetch --tags #fetch the branches
 git fetch origin "+refs/tags/*:refs/tags/*" #now overwrite the tags
-git for-each-ref --sort=-creatordate --format '%(refname:short)' --count=1 refs/tags/v* | sed -e 's/v//' > patchVersionNumber.txt
+git for-each-ref --sort=-authordate --sort=-creatordate --format '%(refname:short)' --count=1 refs/tags/v* | sed -e 's/v//' > patchVersionNumber.txt
 latestTaggedPatch=`cat patchVersionNumber.txt`
 git checkout -f -q v$latestTaggedPatch
 
