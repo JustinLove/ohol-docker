@@ -1,7 +1,9 @@
 build_server/source/*
 windows_client/source/*
 macosx_client/source/*
+linux_client/source/*
 source/*
+unpack
 .env
 config/.s3cfg
 config/curl_github_auth.txt
