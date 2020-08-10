@@ -19,7 +19,6 @@ cd OneLife
 latestTaggedVersionA=`git for-each-ref --sort=-creatordate --format '%(refname:short)' --count=1 refs/tags/OneLife_v* | sed -e 's/OneLife_v//'`
 git checkout -f -q OneLife_v$latestTaggedVersionA
 
-git for-each-ref --sort=-authordate --sort=-creatordate --format '%(refname:short)' --count=1 refs/tags/v* | sed -e 's/v//' > patchVersionNumber.txt
 echo "*.bat binary" > .git/info/attributes
 rm server/runServer.bat
 git checkout server/runServer.bat
