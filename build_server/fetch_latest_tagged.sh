@@ -70,12 +70,26 @@ echo $SERVER_TAG > server/serverCodeTag.txt
 cd ../OneLifeData7
 (git fetch --tags || true)  #fetch the branches
 git fetch origin "+refs/tags/*:refs/tags/*" #now overwrite the tags
+git reset --hard
+git checkout master
+git merge origin/master
 if [ -z $DATA_VERSION ]
 then
   DATA_VERSION=`git for-each-ref --sort=-creatordate --format '%(refname:short)' --count=1 refs/tags/OneLife_v* | sed -e 's/OneLife_v//'`
 fi
-echo "data $DATA_VERSION"
-git checkout -f -q OneLife_v$DATA_VERSION
+
+if [ -z $DATA_CHECKOUT ]
+then
+  git checkout -f -q OneLife_v$DATA_VERSION
+  DATA_TAG=$DATA_VERSION
+else
+  git checkout -f -q $DATA_CHECKOUT
+  DATA_TAG=$DATA_VERSION-`git log -1 --pretty=format:%h`
+fi
+echo "data $DATA_TAG"
+
+echo $DATA_CHECKOUT > dataCheckout.txt
+echo $DATA_TAG > dataTag.txt
 
 if [ -e */cache.fcz ]
 then
