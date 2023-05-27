@@ -9,7 +9,7 @@
 ./build_server.sh
 ./package_server.sh
 docker volume create oholdata1 # optional, must match package_server_run.sh
-./package_server_run.sh
+./package_server_run.sh # volume mount name needs a posixish environment such as WSL on windows
 ```
 
 #### Historical builds

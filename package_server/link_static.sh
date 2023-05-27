@@ -40,6 +40,26 @@ then
   ln -s $1lastNames.txt .
 fi
 
+if [ -e wordList.txt ]
+then
+  rm wordList.txt
+fi
+
+if [ -e $1wordList.txt ]
+then
+  ln -s $1wordList.txt .
+fi
+
+if [ -e curseWordList.txt ]
+then
+  rm curseWordList.txt
+fi
+
+if [ -e $1curseWordList.txt ]
+then
+  ln -s $1curseWordList.txt .
+fi
+
 if [ -e serverCodeVersionNumber.txt ]
 then
   rm serverCodeVersionNumber.txt

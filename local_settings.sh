@@ -28,8 +28,8 @@ echo 1 > settings/forceEveLocation.ini
 echo 1 > settings/allowMapRequests.ini
 echo "a@b.c" > settings/vogAllowAccounts.ini
 echo "a@b.c" > settings/mapRequestAllowAccounts.ini
-echo 20.0 > settings/minFoodDecrementSeconds.ini
-echo 220.0 > settings/maxFoodDecrementSeconds.ini
+echo 200.0 > settings/minFoodDecrementSeconds.ini
+echo 2200.0 > settings/maxFoodDecrementSeconds.ini
 #echo 0 > settings/minActivePlayersForSpecialBiomes.ini
 #echo 0 > settings/minActivePlayersForToolSlots.ini
 echo 7 > settings/baseToolSlotsPerPlayer.ini
@@ -40,4 +40,4 @@ echo 7 > settings/maxToolSlotsPerPlayer.ini
 #"a@b.c" "0 0,5 41 JASON ROHRER 3201 3202 0 0 0 0"
 
 
-echo "723 0" > biomeRandSeed.txt
+#echo "723 0" > biomeRandSeed.txt

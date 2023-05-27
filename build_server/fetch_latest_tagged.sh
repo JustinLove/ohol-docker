@@ -45,6 +45,7 @@ find network \( -name "*.cpp" -or -name "*.h" \) -exec sed -i"" -e 's/Winsock/wi
 cd ../OneLife
 (git fetch --tags || true)  #fetch the branches
 git fetch origin "+refs/tags/*:refs/tags/*" #now overwrite the tags
+#cp server/server.cpp server/server.cpp.bak
 git reset --hard
 git checkout master
 git merge origin/master
@@ -62,6 +63,7 @@ else
   SERVER_TAG=$SERVER_VERSION-`git log -1 --pretty=format:%h`
 fi
 echo "server $SERVER_TAG"
+#cp server/server.cpp.bak server/server.cpp
 
 echo $SERVER_VERSION > server/serverCodeVersionNumber.txt
 echo $SERVER_CHECKOUT > server/serverCodeCheckout.txt

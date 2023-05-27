@@ -17,6 +17,7 @@ COPY --from=build /ohol/source/OneLifeData7/transitions transitions
 COPY --from=build /ohol/source/OneLifeData7/tutorialMaps tutorialMaps
 COPY --from=build \
   /ohol/source/OneLife/server/*Names.txt \
+  /ohol/source/OneLife/server/*List.txt \
   /ohol/source/OneLife/server/serverCodeVersionNumber.txt \
   /ohol/source/OneLife/server/OneLifeServer ./
 COPY --from=build /ohol/source/OneLife/server/settings settings
